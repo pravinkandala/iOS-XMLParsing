@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		3D5136151C5E8C49000677F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5136141C5E8C49000677F2 /* AppDelegate.swift */; };
-		3D5136171C5E8C49000677F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5136161C5E8C49000677F2 /* ViewController.swift */; };
 		3D51361A1C5E8C49000677F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5136181C5E8C49000677F2 /* Main.storyboard */; };
 		3D51361C1C5E8C49000677F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D51361B1C5E8C49000677F2 /* Assets.xcassets */; };
 		3D51361F1C5E8C49000677F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D51361D1C5E8C49000677F2 /* LaunchScreen.storyboard */; };
+		3D51362D1C61CC3E000677F2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51362C1C61CC3E000677F2 /* TableViewController.swift */; };
+		3D51362F1C61CC7F000677F2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51362E1C61CC7F000677F2 /* DetailViewController.swift */; };
+		3D5136311C61CF49000677F2 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5136301C61CF49000677F2 /* XMLParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D5136111C5E8C49000677F2 /* XMLParsing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMLParsing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5136141C5E8C49000677F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D5136161C5E8C49000677F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D5136191C5E8C49000677F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D51361B1C5E8C49000677F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D51361E1C5E8C49000677F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D5136201C5E8C49000677F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D51362C1C61CC3E000677F2 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		3D51362E1C61CC7F000677F2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3D5136301C61CF49000677F2 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				3D5136141C5E8C49000677F2 /* AppDelegate.swift */,
-				3D5136161C5E8C49000677F2 /* ViewController.swift */,
 				3D5136181C5E8C49000677F2 /* Main.storyboard */,
+				3D51362C1C61CC3E000677F2 /* TableViewController.swift */,
+				3D5136301C61CF49000677F2 /* XMLParser.swift */,
+				3D51362E1C61CC7F000677F2 /* DetailViewController.swift */,
 				3D51361B1C5E8C49000677F2 /* Assets.xcassets */,
 				3D51361D1C5E8C49000677F2 /* LaunchScreen.storyboard */,
 				3D5136201C5E8C49000677F2 /* Info.plist */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D5136171C5E8C49000677F2 /* ViewController.swift in Sources */,
+				3D5136311C61CF49000677F2 /* XMLParser.swift in Sources */,
+				3D51362F1C61CC7F000677F2 /* DetailViewController.swift in Sources */,
 				3D5136151C5E8C49000677F2 /* AppDelegate.swift in Sources */,
+				3D51362D1C61CC3E000677F2 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +294,7 @@
 				3D5136251C5E8C49000677F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
