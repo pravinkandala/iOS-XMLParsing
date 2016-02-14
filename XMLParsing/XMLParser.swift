@@ -12,8 +12,12 @@ protocol XMLParserDelegate{
     func XMLParserError(parser: XMLParser, error: String)
 }
 
+
+
 class XMLParser: NSObject, NSXMLParserDelegate {
 
+    
+    //variable initializing
     let url: NSURL
     var delegate: XMLParserDelegate?
     
@@ -28,6 +32,8 @@ class XMLParser: NSObject, NSXMLParserDelegate {
     init(url: NSURL) {
         self.url = url
     }
+    
+    
     
     func parse(handler:() -> Void){
         self.handler = handler
@@ -54,14 +60,16 @@ class XMLParser: NSObject, NSXMLParserDelegate {
         delegate?.XMLParserError(self, error: parseError.localizedDescription)
     }
     
+    //didStartElement from starting of entry element in xml file
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         if elementName == "entry"{
         object.removeAll(keepCapacity: false)
             inItem = true
         }
         current = elementName
-        
     }
+    
+    //find characters
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         if !inItem{
             return
@@ -75,12 +83,17 @@ class XMLParser: NSObject, NSXMLParserDelegate {
             object[current] = string
         }
     }
+    
+    //till entry element close in xml file
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "entry"{
             inItem = false
             
+            //obects += object
             objects.append(object)
         }
+        
+
     }
     
     func parserDidEndDocument(parser: NSXMLParser) {

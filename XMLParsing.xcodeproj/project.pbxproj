@@ -14,6 +14,8 @@
 		3D51362D1C61CC3E000677F2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51362C1C61CC3E000677F2 /* TableViewController.swift */; };
 		3D51362F1C61CC7F000677F2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51362E1C61CC7F000677F2 /* DetailViewController.swift */; };
 		3D5136311C61CF49000677F2 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5136301C61CF49000677F2 /* XMLParser.swift */; };
+		3D5136631C69816E000677F2 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5136621C69816E000677F2 /* ImageProvider.swift */; };
+		3D5136651C69A739000677F2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5136641C69A739000677F2 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		3D51362C1C61CC3E000677F2 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		3D51362E1C61CC7F000677F2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3D5136301C61CF49000677F2 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
+		3D5136621C69816E000677F2 /* ImageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
+		3D5136641C69A739000677F2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +62,12 @@
 		3D5136131C5E8C49000677F2 /* XMLParsing */ = {
 			isa = PBXGroup;
 			children = (
+				3D5136621C69816E000677F2 /* ImageProvider.swift */,
 				3D5136141C5E8C49000677F2 /* AppDelegate.swift */,
 				3D5136181C5E8C49000677F2 /* Main.storyboard */,
 				3D51362C1C61CC3E000677F2 /* TableViewController.swift */,
 				3D5136301C61CF49000677F2 /* XMLParser.swift */,
+				3D5136641C69A739000677F2 /* CustomTableViewCell.swift */,
 				3D51362E1C61CC7F000677F2 /* DetailViewController.swift */,
 				3D51361B1C5E8C49000677F2 /* Assets.xcassets */,
 				3D51361D1C5E8C49000677F2 /* LaunchScreen.storyboard */,
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5136651C69A739000677F2 /* CustomTableViewCell.swift in Sources */,
+				3D5136631C69816E000677F2 /* ImageProvider.swift in Sources */,
 				3D5136311C61CF49000677F2 /* XMLParser.swift in Sources */,
 				3D51362F1C61CC7F000677F2 /* DetailViewController.swift in Sources */,
 				3D5136151C5E8C49000677F2 /* AppDelegate.swift in Sources */,

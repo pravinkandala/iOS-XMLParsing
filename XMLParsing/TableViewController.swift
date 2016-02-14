@@ -8,7 +8,11 @@
 
 import UIKit
 
+
+//initializing url
 let url = NSURL(string: "https://itunes.apple.com/us/rss/topmovies/limit=10/xml")
+
+var imageProvider = ImageProvider()
 
 class TableViewController: UITableViewController, XMLParserDelegate {
     
@@ -25,18 +29,20 @@ class TableViewController: UITableViewController, XMLParserDelegate {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-         title = "Top Movies"
+        
+        //display title
+         title = "Top 10 Movies"
         
         parser.delegate = self
         parser.parse{
+            
+            //refresh the tableview for data
             self.tableView.reloadData()
         }
     }
 
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
+    
+    //display if any parser error
     
     func XMLParserError(parser: XMLParser, error: String) {
         print(error)
@@ -55,15 +61,54 @@ class TableViewController: UITableViewController, XMLParserDelegate {
     }
 
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> CustomTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCell
 
-        cell.textLabel!.text = parser.objects[indexPath.row]["title"]
-        cell.textLabel?.numberOfLines = 2
-        cell.textLabel?.lineBreakMode = .ByWordWrapping
-        cell.textLabel?.textColor = UIColor.darkTextColor()
-        cell.textLabel?.font = UIFont.boldSystemFontOfSize(18)
-        cell.detailTextLabel!.text = parser.objects[indexPath.row]["rights"]
+        
+        
+        //display title of movie
+        cell.label1.text = parser.objects[indexPath.row]["title"]
+        cell.label1?.numberOfLines = 2
+        cell.label1?.lineBreakMode = .ByWordWrapping
+        cell.label1?.textColor = UIColor.darkTextColor()
+        cell.label1?.font = UIFont.boldSystemFontOfSize(18)
+        
+        //display artist name
+        cell.label2!.text = "Artist: "+parser.objects[indexPath.row]["im:artist"]!
+        
+        //display price of the movie
+        cell.label3!.text = "Price: "+parser.objects[indexPath.row]["im:price"]!
+        
+        //display discription of the movie
+        
+        cell.discriptionLabel!.text = parser.objects[indexPath.row]["summary"]!
+        cell.discriptionLabel?.numberOfLines = 5
+        cell.discriptionLabel?.lineBreakMode = .ByWordWrapping
+        cell.discriptionLabel?.font = UIFont.boldSystemFontOfSize(11)
+        
+        
+        
+        
+        // downloading images for cell image view
+        let imgName = parser.objects[indexPath.row]["im:image"]
+        
+        var myArray = imgName!.componentsSeparatedByString("\n")
+        
+        
+            print(myArray[4].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()))
+     
+        //call 113x170 size images from xml
+        
+        imageProvider.imageWithName(myArray[4].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())) {
+            (image: UIImage) in
+            
+            // Code to do something with the downloaded image named image
+            
+            cell.image1.image = image
+            
+        }
+        
+
 
         return cell
     }
